@@ -15,14 +15,14 @@
             <rect key="frame" x="0.0" y="0.0" width="1145" height="444"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Дети (макс. 5)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Uc-eg-Fsj">
+                <label opaque="NO" contentMode="left" verticalHuggingPriority="251" text="Дети (макс. 5)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Uc-eg-Fsj">
                     <rect key="frame" x="8" y="0.0" width="121.5" height="444"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LCi-7y-a2b">
-                    <rect key="frame" x="564.5" y="0.0" width="572.5" height="444"/>
+                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LCi-7y-a2b" customClass="RoundedButton" customModule="Test" customModuleProvider="target">
+                    <rect key="frame" x="450" y="0.0" width="687" height="444"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="tcu-zd-TRa"/>
                     </constraints>
@@ -33,12 +33,20 @@
                             <fragment content="+Добавить ребенка">
                                 <attributes>
                                     <color key="NSColor" red="0.1031048019" green="0.52900403510000005" blue="0.9529411793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <font key="NSFont" metaFont="system" size="19"/>
+                                    <font key="NSFont" metaFont="system" size="20"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
                     </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.30196079609999998" green="0.67058825489999996" blue="0.9529411793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="addButtonTapped" destination="iN0-l3-epB" eventType="touchUpInside" id="emd-Yd-FXe"/>
                     </connections>
@@ -51,19 +59,21 @@
                 <constraint firstItem="LCi-7y-a2b" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GqN-dI-pPk"/>
                 <constraint firstItem="8Uc-eg-Fsj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Uwh-hg-02Z"/>
                 <constraint firstAttribute="bottom" secondItem="8Uc-eg-Fsj" secondAttribute="bottom" id="W0J-7d-q7W"/>
-                <constraint firstItem="LCi-7y-a2b" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="b8h-Jh-qJD"/>
+                <constraint firstItem="LCi-7y-a2b" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="b8h-Jh-qJD"/>
                 <constraint firstItem="8Uc-eg-Fsj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="l8z-c4-FCO"/>
                 <constraint firstAttribute="trailing" secondItem="LCi-7y-a2b" secondAttribute="trailing" constant="8" id="vQG-n0-5ry"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="addButton" destination="LCi-7y-a2b" id="OMg-Zp-461"/>
-            </connections>
             <point key="canvasLocation" x="-392.02898550724643" y="-58.928571428571423"/>
         </view>
     </objects>
+    <designables>
+        <designable name="LCi-7y-a2b">
+            <size key="intrinsicContentSize" width="180" height="22"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -11,13 +11,14 @@ class ViewController: UIViewController {
     
     //MARK: Subviews
     @IBOutlet var tableView: UITableView!
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
     }
     
     private func setupTableView() {
+       
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.sectionFooterHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: PersonCell.className, bundle: nil), forCellReuseIdentifier: PersonCell.className)
@@ -36,6 +37,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PersonCell.className, for: indexPath) as! PersonCell
+        cell.ageTextField.delegate = self
+        cell.nameTextField.delegate = self
         return cell
     }
     
@@ -49,5 +52,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return footer
     }
     
+    
+}
+
+extension ViewController: UITextFieldDelegate {
     
 }
