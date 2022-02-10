@@ -17,26 +17,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="391" height="228"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kmx-iC-2NA">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kmx-iC-2NA">
                         <rect key="frame" x="0.0" y="0.0" width="391" height="228"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="K7W-wZ-wfv">
-                                <rect key="frame" x="0.0" y="0.0" width="391" height="92"/>
+                                <rect key="frame" x="0.0" y="0.0" width="391" height="114"/>
                                 <subviews>
                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOU-45-ZAI">
-                                        <rect key="frame" x="8" y="8" width="375" height="76"/>
+                                        <rect key="frame" x="8" y="8" width="375" height="98"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="BmA-o3-NSh">
-                                                <rect key="frame" x="20" y="16" width="335" height="44"/>
+                                                <rect key="frame" x="8" y="8" width="359" height="82"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jS5-rw-6AQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="24.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="24.5" height="41"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjA-J9-ZV5">
-                                                        <rect key="frame" x="0.0" y="22" width="5" height="22"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjA-J9-ZV5">
+                                                        <rect key="frame" x="0.0" y="41" width="34" height="41"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" textContentType="name"/>
                                                     </textField>
@@ -44,23 +44,23 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="BmA-o3-NSh" firstAttribute="leading" secondItem="aOU-45-ZAI" secondAttribute="leading" constant="20" id="3PQ-YF-THv"/>
-                                            <constraint firstAttribute="trailing" secondItem="BmA-o3-NSh" secondAttribute="trailing" constant="20" id="619-0B-w7u"/>
-                                            <constraint firstItem="BmA-o3-NSh" firstAttribute="top" secondItem="aOU-45-ZAI" secondAttribute="top" constant="16" id="70L-Mq-28V"/>
-                                            <constraint firstAttribute="bottom" secondItem="BmA-o3-NSh" secondAttribute="bottom" constant="16" id="JML-JA-K1c"/>
+                                            <constraint firstItem="BmA-o3-NSh" firstAttribute="leading" secondItem="aOU-45-ZAI" secondAttribute="leading" constant="8" id="3PQ-YF-THv"/>
+                                            <constraint firstAttribute="trailing" secondItem="BmA-o3-NSh" secondAttribute="trailing" constant="8" id="619-0B-w7u"/>
+                                            <constraint firstItem="BmA-o3-NSh" firstAttribute="top" secondItem="aOU-45-ZAI" secondAttribute="top" constant="8" id="70L-Mq-28V"/>
+                                            <constraint firstAttribute="bottom" secondItem="BmA-o3-NSh" secondAttribute="bottom" constant="8" id="JML-JA-K1c"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="knH-dB-lXE">
-                                <rect key="frame" x="0.0" y="92" width="391" height="136"/>
+                                <rect key="frame" x="0.0" y="114" width="391" height="114"/>
                                 <subviews>
                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8t-pH-blI">
-                                        <rect key="frame" x="8" y="8" width="375" height="120"/>
+                                        <rect key="frame" x="8" y="8" width="375" height="98"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ONe-ZM-D8m">
-                                                <rect key="frame" x="20" y="16" width="335" height="88"/>
+                                                <rect key="frame" x="8" y="8" width="359" height="82"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Возраст" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoP-C5-PH2">
                                                         <rect key="frame" x="0.0" y="0.0" width="48.5" height="14.5"/>
@@ -69,7 +69,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="99" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="2X6-aD-v2D">
-                                                        <rect key="frame" x="0.0" y="14.5" width="23" height="73.5"/>
+                                                        <rect key="frame" x="0.0" y="14.5" width="23" height="67.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -77,10 +77,10 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="ONe-ZM-D8m" firstAttribute="leading" secondItem="E8t-pH-blI" secondAttribute="leading" constant="20" id="0GF-Ga-K5H"/>
-                                            <constraint firstAttribute="trailing" secondItem="ONe-ZM-D8m" secondAttribute="trailing" constant="20" id="BfD-CH-sse"/>
-                                            <constraint firstAttribute="bottom" secondItem="ONe-ZM-D8m" secondAttribute="bottom" constant="16" id="uya-Yp-HPP"/>
-                                            <constraint firstItem="ONe-ZM-D8m" firstAttribute="top" secondItem="E8t-pH-blI" secondAttribute="top" constant="16" id="weR-Og-i2P"/>
+                                            <constraint firstItem="ONe-ZM-D8m" firstAttribute="leading" secondItem="E8t-pH-blI" secondAttribute="leading" constant="8" id="0GF-Ga-K5H"/>
+                                            <constraint firstAttribute="trailing" secondItem="ONe-ZM-D8m" secondAttribute="trailing" constant="8" id="BfD-CH-sse"/>
+                                            <constraint firstAttribute="bottom" secondItem="ONe-ZM-D8m" secondAttribute="bottom" constant="8" id="uya-Yp-HPP"/>
+                                            <constraint firstItem="ONe-ZM-D8m" firstAttribute="top" secondItem="E8t-pH-blI" secondAttribute="top" constant="8" id="weR-Og-i2P"/>
                                         </constraints>
                                     </view>
                                 </subviews>
