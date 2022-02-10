@@ -21,7 +21,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LCi-7y-a2b">
+                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LCi-7y-a2b">
                     <rect key="frame" x="564.5" y="0.0" width="572.5" height="444"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="tcu-zd-TRa"/>
@@ -33,12 +33,15 @@
                             <fragment content="+Добавить ребенка">
                                 <attributes>
                                     <color key="NSColor" red="0.1031048019" green="0.52900403510000005" blue="0.9529411793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <font key="NSFont" metaFont="system" size="20"/>
+                                    <font key="NSFont" metaFont="system" size="19"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
                     </state>
+                    <connections>
+                        <action selector="addButtonTapped" destination="iN0-l3-epB" eventType="touchUpInside" id="emd-Yd-FXe"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
