@@ -29,9 +29,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="R9X-y9-vmk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7ai-8E-buB"/>
-                            <constraint firstItem="R9X-y9-vmk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="W91-cv-aPg"/>
+                            <constraint firstItem="R9X-y9-vmk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W91-cv-aPg"/>
                             <constraint firstItem="R9X-y9-vmk" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="lcu-6G-yJF"/>
-                            <constraint firstItem="R9X-y9-vmk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="lhi-m3-ThN"/>
+                            <constraint firstItem="R9X-y9-vmk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lhi-m3-ThN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Personal Data" id="ecw-JK-a3R"/>
