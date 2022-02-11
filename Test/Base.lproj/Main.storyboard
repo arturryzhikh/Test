@@ -140,6 +140,115 @@
                                             <outletCollection property="backgrounds" destination="jcQ-Ak-7DA" collectionClass="NSMutableArray" id="E0b-8H-0PS"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChildCell" rowHeight="200" id="pfP-Kt-2QM" customClass="PersonCell" customModule="Test" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="271" width="414" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pfP-Kt-2QM" id="4tE-hg-Hsk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hoC-hN-CuJ" userLabel="Root Stack">
+                                                    <rect key="frame" x="0.0" y="0.0" width="314" height="200"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DJa-oa-4pj">
+                                                            <rect key="frame" x="0.0" y="0.0" width="314" height="100"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFc-lD-EtR">
+                                                                    <rect key="frame" x="8" y="8" width="298" height="84"/>
+                                                                    <subviews>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YAL-Y8-z0T">
+                                                                            <rect key="frame" x="8" y="8" width="282" height="68"/>
+                                                                            <subviews>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZc-zH-Rx3">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="282" height="34"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                                    <nil key="textColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OOg-1V-wT1">
+                                                                                    <rect key="frame" x="0.0" y="34" width="282" height="34"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                                    <textInputTraits key="textInputTraits"/>
+                                                                                </textField>
+                                                                            </subviews>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="trailing" secondItem="OOg-1V-wT1" secondAttribute="trailing" id="ROT-e2-Gcj"/>
+                                                                            </constraints>
+                                                                        </stackView>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="YAL-Y8-z0T" firstAttribute="leading" secondItem="zFc-lD-EtR" secondAttribute="leading" constant="8" id="4bX-el-LGi"/>
+                                                                        <constraint firstItem="YAL-Y8-z0T" firstAttribute="top" secondItem="zFc-lD-EtR" secondAttribute="top" constant="8" id="Jbg-ex-WE7"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="YAL-Y8-z0T" secondAttribute="trailing" constant="8" id="caT-fl-eyV"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="YAL-Y8-z0T" secondAttribute="bottom" constant="8" id="tH3-qc-Kxr"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="i7I-rs-u72">
+                                                            <rect key="frame" x="0.0" y="100" width="314" height="100"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZm-Nl-9kC">
+                                                                    <rect key="frame" x="8" y="8" width="298" height="84"/>
+                                                                    <subviews>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cKq-G2-Hzc">
+                                                                            <rect key="frame" x="8" y="8" width="282" height="68"/>
+                                                                            <subviews>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Возраст" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ki1-ed-kdr">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="282" height="34"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                                    <nil key="textColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aZU-Kt-NJN">
+                                                                                    <rect key="frame" x="0.0" y="34" width="282" height="34"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                                    <textInputTraits key="textInputTraits"/>
+                                                                                </textField>
+                                                                            </subviews>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="trailing" secondItem="aZU-Kt-NJN" secondAttribute="trailing" id="je8-mf-gTN"/>
+                                                                            </constraints>
+                                                                        </stackView>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="cKq-G2-Hzc" firstAttribute="top" secondItem="sZm-Nl-9kC" secondAttribute="top" constant="8" id="0Dn-As-2FA"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="cKq-G2-Hzc" secondAttribute="trailing" constant="8" id="4F0-s7-Ita"/>
+                                                                        <constraint firstItem="cKq-G2-Hzc" firstAttribute="leading" secondItem="sZm-Nl-9kC" secondAttribute="leading" constant="8" id="cRD-Jx-eOc"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="cKq-G2-Hzc" secondAttribute="bottom" constant="8" id="jIN-e0-F3z"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EmO-a2-wgH">
+                                                    <rect key="frame" x="322" y="35" width="84" height="30"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="Удалить"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="EmO-a2-wgH" firstAttribute="centerY" secondItem="YAL-Y8-z0T" secondAttribute="centerY" id="Bb3-Fn-uEl"/>
+                                                <constraint firstAttribute="trailing" secondItem="EmO-a2-wgH" secondAttribute="trailing" constant="8" id="InI-SJ-gBl"/>
+                                                <constraint firstItem="EmO-a2-wgH" firstAttribute="leading" secondItem="hoC-hN-CuJ" secondAttribute="trailing" constant="8" id="KSA-Ta-Jj3"/>
+                                                <constraint firstItem="hoC-hN-CuJ" firstAttribute="leading" secondItem="4tE-hg-Hsk" secondAttribute="leading" id="eOM-5A-2rJ"/>
+                                                <constraint firstItem="hoC-hN-CuJ" firstAttribute="top" secondItem="4tE-hg-Hsk" secondAttribute="top" id="jh2-mf-WaI"/>
+                                                <constraint firstAttribute="bottom" secondItem="hoC-hN-CuJ" secondAttribute="bottom" id="ozj-iX-DPr"/>
+                                                <constraint firstItem="EmO-a2-wgH" firstAttribute="width" secondItem="4tE-hg-Hsk" secondAttribute="width" multiplier="0.202899" id="pct-qF-SGl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ageTextField" destination="aZU-Kt-NJN" id="cPI-0m-aEb"/>
+                                            <outlet property="nameTextField" destination="OOg-1V-wT1" id="ieT-b5-yxf"/>
+                                            <outletCollection property="backgrounds" destination="zFc-lD-EtR" collectionClass="NSMutableArray" id="rWw-Lo-kyz"/>
+                                            <outletCollection property="backgrounds" destination="sZm-Nl-9kC" collectionClass="NSMutableArray" id="DqI-Ve-v97"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="yQ5-R8-gb6"/>

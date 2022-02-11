@@ -15,14 +15,14 @@
             <rect key="frame" x="0.0" y="0.0" width="1145" height="444"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" contentMode="left" verticalHuggingPriority="251" text="Дети (макс. 5)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Uc-eg-Fsj">
+                <label opaque="NO" contentMode="left" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="250" text="Дети (макс. 5)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Uc-eg-Fsj">
                     <rect key="frame" x="8" y="0.0" width="121.5" height="444"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LCi-7y-a2b" customClass="RoundedButton" customModule="Test" customModuleProvider="target">
-                    <rect key="frame" x="450" y="0.0" width="687" height="444"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LCi-7y-a2b" customClass="RoundedButton" customModule="Test" customModuleProvider="target">
+                    <rect key="frame" x="496" y="0.0" width="641" height="444"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="tcu-zd-TRa"/>
                     </constraints>
@@ -59,7 +59,8 @@
                 <constraint firstItem="LCi-7y-a2b" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GqN-dI-pPk"/>
                 <constraint firstItem="8Uc-eg-Fsj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Uwh-hg-02Z"/>
                 <constraint firstAttribute="bottom" secondItem="8Uc-eg-Fsj" secondAttribute="bottom" id="W0J-7d-q7W"/>
-                <constraint firstItem="LCi-7y-a2b" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="b8h-Jh-qJD"/>
+                <constraint firstItem="LCi-7y-a2b" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.56" id="b8h-Jh-qJD"/>
+                <constraint firstItem="LCi-7y-a2b" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Uc-eg-Fsj" secondAttribute="trailing" constant="6" id="iK8-c5-4ML"/>
                 <constraint firstItem="8Uc-eg-Fsj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="l8z-c4-FCO"/>
                 <constraint firstAttribute="trailing" secondItem="LCi-7y-a2b" secondAttribute="trailing" constant="8" id="vQG-n0-5ry"/>
             </constraints>
