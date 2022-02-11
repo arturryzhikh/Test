@@ -8,8 +8,10 @@
 import UIKit
 
 class ChildCell: UITableViewCell , NameIdentifiable {
+    
     //MARK: Messages
-   
+    var nameChanged: ((String?) -> Void)?
+    var ageChanged: ((String?) -> Void)?
     var deleteChild: (() -> Void)?
     
     @IBAction func deleteButtonTapped() {
@@ -33,18 +35,7 @@ class ChildCell: UITableViewCell , NameIdentifiable {
         }
     }
     
-    //MARK: Messages
-    var nameChanged: ((String?) -> Void)?
-    var ageChanged: ((String?) -> Void)?
-    
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-        
-        
-    }
-    
-   
-    
+
     override func layoutSubviews() {
         
         super.layoutSubviews()

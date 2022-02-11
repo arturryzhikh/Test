@@ -9,7 +9,7 @@ import Foundation
 
 class ViewModel {
     //MARK: Messages
-    var onError: ((_ message : String) -> Void)?
+    var onChildLimit: (() -> Void)?
     var onReload: (() -> Void)?
     //
     enum Sections: Int {
@@ -35,24 +35,45 @@ class ViewModel {
         }
     }
     
-    func setName(_ name: String?) {
-        guard let name = name else { return }
+    func setName(_ name: String?, at indexPath: IndexPath) {
+        guard
+            let name = name ,
+            let person = pickPerson(at: indexPath) else { return }
         person.name = name
+    }
+    
+    func setAge(_ age: String?, at indexPath: IndexPath) {
+        guard
+            let age = age,
+            let person = pickPerson(at: indexPath) else { return }
+        person.age = age
         
     }
     
-    func setAge(_ age: String?) {
-        guard let age = age else { return }
-        person.age = age
+    private func pickPerson(at indexPath: IndexPath) -> Person? {
+        let section = Sections(rawValue: indexPath.section)
+        switch section {
+        case .person:
+            return person
+        case .children:
+            return person.children[indexPath.row]
+        case .none:
+            return nil
+        }
     }
     
     func addChild() {
-        guard person.children.count < 5 else {
-            onError?("Упс! Вы можете добавить не более 5 детей")
+        guard canAddChild else {
+            onReload?()
             return
         }
+        
         person.children.append(Person())
         onReload?()
+    }
+    
+    var canAddChild: Bool {
+        return person.children.count < 5
     }
     
     func deleteChild(at index: Int) {

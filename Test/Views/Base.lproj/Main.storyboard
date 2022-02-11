@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" delaysContentTouches="NO" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="R9X-y9-vmk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="740"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="732"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="KVL-4h-lZJ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="21.5"/>
@@ -67,7 +67,7 @@
                                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Андрей" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ghT-xV-Vr2">
                                                                                     <rect key="frame" x="0.0" y="34" width="382" height="34"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                                                                                     <connections>
                                                                                         <action selector="textFieldTextDidChange:" destination="z6y-2D-rlU" eventType="editingChanged" id="Q9L-TM-R5G"/>
                                                                                         <outlet property="delegate" destination="z6y-2D-rlU" id="yL0-LQ-wyz"/>
@@ -176,7 +176,10 @@
                                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Петр" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OOg-1V-wT1">
                                                                                     <rect key="frame" x="0.0" y="34" width="282" height="34"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                                    <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
+                                                                                    <connections>
+                                                                                        <action selector="textFieldTextDidChange:" destination="pfP-Kt-2QM" eventType="editingChanged" id="Kc4-du-Rm9"/>
+                                                                                    </connections>
                                                                                 </textField>
                                                                             </subviews>
                                                                             <constraints>
@@ -214,6 +217,9 @@
                                                                                     <rect key="frame" x="0.0" y="34" width="282" height="34"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                                                                    <connections>
+                                                                                        <action selector="textFieldTextDidChange:" destination="pfP-Kt-2QM" eventType="editingChanged" id="liG-7I-xsf"/>
+                                                                                    </connections>
                                                                                 </textField>
                                                                             </subviews>
                                                                             <constraints>
@@ -267,7 +273,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zhi-cu-WfA" userLabel="Очистить" customClass="RoundedButton" customModule="Test" customModuleProvider="target">
-                                <rect key="frame" x="83" y="800" width="248" height="62"/>
+                                <rect key="frame" x="83" y="792" width="248" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="zhi-cu-WfA" secondAttribute="width" multiplier="1/4" id="DWy-MZ-5fN"/>
                                 </constraints>
@@ -296,7 +302,7 @@
                             <constraint firstItem="R9X-y9-vmk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W91-cv-aPg"/>
                             <constraint firstItem="R9X-y9-vmk" firstAttribute="bottom" secondItem="zhi-cu-WfA" secondAttribute="top" constant="-16" id="lcu-6G-yJF"/>
                             <constraint firstItem="R9X-y9-vmk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lhi-m3-ThN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zhi-cu-WfA" secondAttribute="bottom" id="xJz-a2-GaL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zhi-cu-WfA" secondAttribute="bottom" constant="8" id="xJz-a2-GaL"/>
                             <constraint firstItem="zhi-cu-WfA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xk6-lG-fhR"/>
                         </constraints>
                     </view>

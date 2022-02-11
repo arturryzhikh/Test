@@ -9,13 +9,17 @@ import UIKit
 
 class PersonCell: UITableViewCell, NameIdentifiable {
     
+    //MARK: Messages
+    var nameChanged: ((String?) -> Void)?
+    var ageChanged: ((String?) -> Void)?
+    //MARK: Outlets
     @IBOutlet  var backgrounds: [UIView]!
     
     @IBOutlet  var nameTextField: UITextField!
     
     @IBOutlet  var ageTextField: UITextField!
     
-    
+   
     @IBAction  func textFieldTextDidChange(_ textField: UITextField) {
         if textField === nameTextField {
             nameChanged?(textField.text)
@@ -23,18 +27,6 @@ class PersonCell: UITableViewCell, NameIdentifiable {
             ageChanged?(textField.text)
         }
     }
-    
-    //MARK: Messages
-    var nameChanged: ((String?) -> Void)?
-    var ageChanged: ((String?) -> Void)?
-    
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-        
-        
-    }
-    
-   
     
     override func layoutSubviews() {
         

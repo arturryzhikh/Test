@@ -27,20 +27,9 @@ class ViewController: UIViewController {
         actionSheet.addAction(cancelAction)
         present(actionSheet, animated: true,completion: nil)
     }
+    
     //MARK: Bind view model
     private func bindViewModel(_viewModel: ViewModel) {
-        viewModel.onError = { [weak self] message in
-            //FIXME: show alert
-            guard let self = self else { return }
-            let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
-              // your code with delay
-              alert.dismiss(animated: true, completion: nil)
-            }
-            
-        }
-        
         viewModel.onReload = { [weak self] in
             guard let self = self else { return }
             self.tableView.reloadData()
@@ -60,18 +49,16 @@ class ViewController: UIViewController {
 
 
 }
-
+//MARK: UITableViewDelegate & UITableViewDataSource
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         viewModel.numberOfSections()
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.numberOfRowsInSection(section)
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = ViewModel.Sections(rawValue: indexPath.section)
@@ -81,47 +68,58 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             cell.ageTextField.text = viewModel.person.age
             cell.nameTextField.text = viewModel.person.name
             cell.nameChanged = { [weak self] name in
-                guard let self = self else {
-                    return
-                }
-               self.viewModel.setName(name)
-                
+                guard let self = self else { return }
+               self.viewModel.setName(name,at: indexPath)
             }
             
             cell.ageChanged = { [weak self] age in
-                guard let self = self else {
-                    return
-                }
-                self.viewModel.setAge(age)
+                guard let self = self else { return }
+                self.viewModel.setAge(age,at: indexPath)
             }
+            
             return cell
             
         case .children:
             let cell = tableView.dequeueReusableCell(withIdentifier: ChildCell.className, for: indexPath) as! ChildCell
-            cell.nameTextField.text = viewModel.person.children[indexPath.row].name
-            cell.ageTextField.text = viewModel.person.children[indexPath.row].age
-            cell.deleteChild = { [weak self] in
-                guard indexPath.section > 0 , let self = self else { return }
-                self.viewModel.deleteChild(at: indexPath.row)
+            cell.nameChanged = { [weak self] name in
+                guard let self = self else { return }
+               self.viewModel.setName(name,at: indexPath)
             }
             
-            
+            cell.ageChanged = { [weak self] age in
+                guard let self = self else { return }
+                self.viewModel.setAge(age,at: indexPath)
+               
+            }
+            cell.deleteChild = { [weak self] in
+                guard let self = self else { return }
+                self.viewModel.deleteChild(at: indexPath.row)
+            }
             return cell
+            
         case .none:
             fatalError("No appropriate cell for indexPath : \(indexPath)")
         }
         
     }
     
-    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: PersonFooter.className) as! PersonFooter
+        
         footer.addChildAction = { [weak self] in
             guard let self = self else { return }
             self.viewModel.addChild()
         }
+        let section = ViewModel.Sections(rawValue: section)
+        switch section {
+        case .person:
+            return  viewModel.canAddChild ? footer : nil
+        case .children:
+            return nil
+        case .none:
+            return nil
+        }
         
-        return (section == 0) ? footer : nil
     }
     
     
