@@ -47,6 +47,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         switch section {
         case .person:
             let cell = tableView.dequeueReusableCell(withIdentifier: PersonCell.className, for: indexPath) as! PersonCell
+            cell.nameChanged = { [weak self] name in
+                print(name)
+            }
+            cell.ageChanged = { [weak self] age in
+                print(age)
+            }
             return cell
         case .children:
             let cell = tableView.dequeueReusableCell(withIdentifier: ChildCell.className, for: indexPath)

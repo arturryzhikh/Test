@@ -15,18 +15,26 @@ class PersonCell: UITableViewCell, NameIdentifiable {
     
     @IBOutlet  var ageTextField: UITextField!
     
+    
     @IBAction  func textFieldTextDidChange(_ textField: UITextField) {
-        print(textField.text)
+        if textField === nameTextField {
+            nameChanged?(textField.text)
+        } else if textField === ageTextField {
+            ageChanged?(textField.text)
+        }
     }
+    
+    //MARK: Messages
+    var nameChanged: ((String?) -> Void)?
+    var ageChanged: ((String?) -> Void)?
+    
     override class func awakeFromNib() {
         super.awakeFromNib()
         
         
     }
     
-    //MARK: Messages
-    var nameChanged: ((String) -> Void)?
-    var ageChanged: ((String) -> Void)?
+   
     
     override func layoutSubviews() {
         
