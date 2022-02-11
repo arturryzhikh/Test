@@ -69,11 +69,6 @@
             <point key="canvasLocation" x="-392.02898550724643" y="-58.928571428571423"/>
         </view>
     </objects>
-    <designables>
-        <designable name="LCi-7y-a2b">
-            <size key="intrinsicContentSize" width="180" height="22"/>
-        </designable>
-    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
