@@ -9,9 +9,6 @@ import UIKit
 
 class RoundedButton: UIButton {
 
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = 30
