@@ -9,15 +9,27 @@ import UIKit
 
 class PersonCell: UITableViewCell, NameIdentifiable {
     
-    @IBOutlet private var backgrounds: [UIView]!
+    @IBOutlet  var backgrounds: [UIView]!
     
-    @IBOutlet var nameTextField: UITextField!
+    @IBOutlet  var nameTextField: UITextField!
     
-    @IBOutlet var ageTextField: UITextField!
+    @IBOutlet  var ageTextField: UITextField!
     
-
+    @IBAction  func textFieldTextDidChange(_ textField: UITextField) {
+        print(textField.text)
+    }
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+        
+        
+    }
+    
+    //MARK: Messages
+    var nameChanged: ((String) -> Void)?
+    var ageChanged: ((String) -> Void)?
     
     override func layoutSubviews() {
+        
         super.layoutSubviews()
         backgrounds.forEach {
             $0.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
@@ -28,7 +40,9 @@ class PersonCell: UITableViewCell, NameIdentifiable {
        
     }
     
-   
+}
+
+extension PersonCell: UITextFieldDelegate {
     
     
 }

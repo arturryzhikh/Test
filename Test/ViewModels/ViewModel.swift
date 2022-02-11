@@ -15,11 +15,12 @@ final class ViewModel {
     }
    
     var person = Person()
-    func numberOfSections() -> Int {
+    
+    final func numberOfSections() -> Int {
         return (person.children.count > 0) ?  2 : 1
     }
     
-    func numberOfRowsInSection(_ section: Int) -> Int {
+    final func numberOfRowsInSection(_ section: Int) -> Int {
         let section = Sections(rawValue: section)
         switch section {
         case .person:

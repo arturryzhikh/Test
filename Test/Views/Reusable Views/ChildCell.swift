@@ -9,5 +9,8 @@ import UIKit
 
 final class ChildCell: PersonCell {
     
+    @IBAction func deleteButtonTapped() {
+        print("OMg")
+    }
   
 }

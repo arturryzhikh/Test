@@ -8,6 +8,7 @@
 import Foundation
 
 final class Person {
+    
     var name: String?
     var age: Int? = nil
     var children: [Person] = []

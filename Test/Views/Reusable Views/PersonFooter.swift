@@ -8,9 +8,10 @@
 import UIKit
 
 class PersonFooter: UITableViewHeaderFooterView, NameIdentifiable {
- 
+    
+    var addChildAction: (() -> Void)?
     @IBAction func addButtonTapped() {
-        print(#function)
+        addChildAction?()
     }
    
 }

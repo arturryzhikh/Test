@@ -56,6 +56,7 @@
 		346821E227B649FF002F5DF0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3498E70427B58391009284F5 /* Protocol */,
 				3498E70327B58336009284F5 /* Reusable Views */,
 				34FD90A627B551F0006B5DE7 /* ViewController.swift */,
 				34FD90A827B551F0006B5DE7 /* Main.storyboard */,
@@ -93,11 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				346821E027B63B62002F5DF0 /* RoundedButton.swift */,
-				34450EE927B5B80F0019F60E /* PersonFooter.swift */,
 				34450EEB27B5B8200019F60E /* PersonFooter.xib */,
 				34FEE9D627B56FC7001E79F3 /* PersonCell.swift */,
 				34463A0227B65171003E99FF /* ChildCell.swift */,
-				3498E70427B58391009284F5 /* Protocol */,
+				34450EE927B5B80F0019F60E /* PersonFooter.swift */,
 			);
 			path = "Reusable Views";
 			sourceTree = "<group>";

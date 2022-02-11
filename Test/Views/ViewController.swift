@@ -12,7 +12,11 @@ class ViewController: UIViewController {
     private let viewModel = ViewModel()
     //MARK: Subviews
     @IBOutlet var tableView: UITableView!
-  
+    //MARK: IB Actions
+    @IBAction func clearButtonTapped() {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -42,7 +46,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let section = ViewModel.Sections(rawValue: indexPath.section)
         switch section {
         case .person:
-            let cell = tableView.dequeueReusableCell(withIdentifier: PersonCell.className, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: PersonCell.className, for: indexPath) as! PersonCell
             return cell
         case .children:
             let cell = tableView.dequeueReusableCell(withIdentifier: ChildCell.className, for: indexPath)
@@ -55,13 +59,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: PersonFooter.className)
+        let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: PersonFooter.className) as! PersonFooter
+        footer.addChildAction = { [weak self] in
+            
+            
+        }
         return (section == 0) ? footer : nil
     }
     
     
 }
 
-extension ViewController: UITextFieldDelegate {
-    
-}
+
