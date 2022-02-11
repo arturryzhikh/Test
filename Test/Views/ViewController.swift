@@ -14,12 +14,15 @@ class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     //MARK: IB Actions
     @IBAction func clearButtonTapped() {
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let clearAction = UIAlertAction(title: "Сбросить данные", style: .default) { [weak self ] action -> Void in
+        let actionSheet = UIAlertController(title: nil,
+                                            message: nil,
+                                            preferredStyle: .actionSheet)
+        let clearAction = UIAlertAction(title: "Сбросить данные",
+                                        style: .default) { [weak self ] action -> Void in
             guard let self = self else { return }
             self.viewModel.clear()
         }
-
+        
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { action -> Void in
             return
         }
@@ -35,19 +38,21 @@ class ViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    
     //MARK: View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         bindViewModel(_viewModel: viewModel)
-     
+        self.dismissKeyboard()
+        
     }
     
     private func setupTableView() {
         tableView.register(UINib(nibName: PersonFooter.className, bundle: nil), forHeaderFooterViewReuseIdentifier: PersonFooter.className)
-      }
-
-
+    }
+    
+    
 }
 //MARK: UITableViewDelegate & UITableViewDataSource
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -69,7 +74,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             cell.nameTextField.text = viewModel.person.name
             cell.nameChanged = { [weak self] name in
                 guard let self = self else { return }
-               self.viewModel.setName(name,at: indexPath)
+                self.viewModel.setName(name,at: indexPath)
             }
             
             cell.ageChanged = { [weak self] age in
@@ -83,13 +88,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: ChildCell.className, for: indexPath) as! ChildCell
             cell.nameChanged = { [weak self] name in
                 guard let self = self else { return }
-               self.viewModel.setName(name,at: indexPath)
+                self.viewModel.setName(name,at: indexPath)
             }
             
             cell.ageChanged = { [weak self] age in
                 guard let self = self else { return }
                 self.viewModel.setAge(age,at: indexPath)
-               
+                
             }
             cell.deleteChild = { [weak self] in
                 guard let self = self else { return }
