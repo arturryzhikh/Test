@@ -7,10 +7,54 @@
 
 import UIKit
 
-final class ChildCell: PersonCell {
+class ChildCell: UITableViewCell , NameIdentifiable {
+    //MARK: Messages
+   
+    var deleteChild: (() -> Void)?
     
     @IBAction func deleteButtonTapped() {
-        print("OMg")
+        deleteChild?()
     }
-  
+    
+    //MARK: Outlets
+    @IBOutlet  var backgrounds: [UIView]!
+    
+    @IBOutlet  var nameTextField: UITextField!
+    
+    @IBOutlet  var ageTextField: UITextField!
+    
+    
+    
+    @IBAction  func textFieldTextDidChange(_ textField: UITextField) {
+        if textField === nameTextField {
+            nameChanged?(textField.text)
+        } else if textField === ageTextField {
+            ageChanged?(textField.text)
+        }
+    }
+    
+    //MARK: Messages
+    var nameChanged: ((String?) -> Void)?
+    var ageChanged: ((String?) -> Void)?
+    
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+        
+        
+    }
+    
+   
+    
+    override func layoutSubviews() {
+        
+        super.layoutSubviews()
+        backgrounds.forEach {
+            $0.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
+            $0.layer.borderWidth = 1.0
+            $0.layer.masksToBounds = true
+          
+        }
+       
+    }
+    
 }

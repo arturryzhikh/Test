@@ -49,8 +49,3 @@ class PersonCell: UITableViewCell, NameIdentifiable {
     }
     
 }
-
-extension PersonCell: UITextFieldDelegate {
-    
-    
-}

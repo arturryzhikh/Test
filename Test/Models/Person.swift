@@ -7,12 +7,13 @@
 
 import Foundation
 
-final class Person {
+class Person {
     
     var name: String?
-    var age: Int? = nil
+    var age: String?
     var children: [Person] = []
-    init(name: String? = nil, age: Int? = nil) {
+    
+    init(name: String? = nil, age: String? = nil) {
         self.name = name
         self.age = age
     }
