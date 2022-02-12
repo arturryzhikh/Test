@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     }
     
     //MARK: Bind view model
-    private func bindViewModel(_viewModel: ViewModel) {
+    private func bindViewModel(_ viewModel: ViewModel) {
         viewModel.onReload = { [weak self] in
             guard let self = self else { return }
             self.tableView.reloadData()
@@ -43,8 +43,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        bindViewModel(_viewModel: viewModel)
-        self.dismissKeyboard()
+        bindViewModel(viewModel)
+        dismissKeyboard()
         
     }
     
@@ -86,6 +86,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             
         case .children:
             let cell = tableView.dequeueReusableCell(withIdentifier: ChildCell.className, for: indexPath) as! ChildCell
+            if let child = viewModel.pickPerson(at: indexPath) {
+                cell.ageTextField.text = child.age
+                cell.nameTextField.text = child.name
+            }
+           
+            
             cell.nameChanged = { [weak self] name in
                 guard let self = self else { return }
                 self.viewModel.setName(name,at: indexPath)

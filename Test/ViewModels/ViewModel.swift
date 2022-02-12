@@ -50,7 +50,7 @@ class ViewModel {
         
     }
     
-    private func pickPerson(at indexPath: IndexPath) -> Person? {
+    func pickPerson(at indexPath: IndexPath) -> Person? {
         let section = Sections(rawValue: indexPath.section)
         switch section {
         case .person:
