@@ -37,7 +37,6 @@ class ChildCell: UITableViewCell , NameIdentifiable {
     
 
     override func layoutSubviews() {
-        
         super.layoutSubviews()
         backgrounds.forEach {
             $0.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor

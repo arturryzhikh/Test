@@ -9,9 +9,7 @@ import Foundation
 
 class ViewModel {
     //MARK: Messages
-    var onChildLimit: (() -> Void)?
     var onReload: (() -> Void)?
-    //
     enum Sections: Int {
         case person
         case children
