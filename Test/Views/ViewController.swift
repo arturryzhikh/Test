@@ -8,10 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //MARK: Keyboard animator
+    private var keyboardAnimator: KeyboardRelatedConstraintAnimator!
     //MARK: View Model
     private let viewModel = ViewModel()
     //MARK: Subviews
     @IBOutlet var tableView: UITableView!
+    //MARK: Constraint outlet
+    @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
     //MARK: IB Actions
     @IBAction func clearButtonTapped() {
         let actionSheet = UIAlertController(title: nil,
@@ -40,6 +44,7 @@ class ViewController: UIViewController {
         viewModel.onReload = { [weak self] in
             guard let self = self else { return }
             self.tableView.reloadData()
+          
         }
     }
     
@@ -49,11 +54,17 @@ class ViewController: UIViewController {
         setupTableView()
         bindViewModel(viewModel)
         dismissKeyboard()
+        keyboardAnimator =  KeyboardRelatedConstraintAnimator(constraint: tableViewBottomConstraint, in: view)
+       
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        keyboardAnimator.addObservers()
         
     }
-    
     private func setupTableView() {
-        tableView.register(UINib(nibName: PersonFooter.className, bundle: nil), forHeaderFooterViewReuseIdentifier: PersonFooter.className)
+        tableView.register(UINib(nibName: PersonFooter.className, bundle: nil),
+                           forHeaderFooterViewReuseIdentifier: PersonFooter.className)
     }
     
     

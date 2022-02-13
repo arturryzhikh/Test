@@ -14,6 +14,7 @@
 		346821E127B63B62002F5DF0 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346821E027B63B62002F5DF0 /* RoundedButton.swift */; };
 		346821E527B64A31002F5DF0 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346821E427B64A31002F5DF0 /* Person.swift */; };
 		346821E827B64A7A002F5DF0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346821E727B64A7A002F5DF0 /* ViewModel.swift */; };
+		34899DA927B903FB00F918BE /*  KeyboardRelatedConstraintAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34899DA827B903FB00F918BE /*  KeyboardRelatedConstraintAnimator.swift */; };
 		3498E70627B583A9009284F5 /* NameIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3498E70527B583A9009284F5 /* NameIdentifiable.swift */; };
 		34FD90A327B551F0006B5DE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FD90A227B551F0006B5DE7 /* AppDelegate.swift */; };
 		34FD90A527B551F0006B5DE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FD90A427B551F0006B5DE7 /* SceneDelegate.swift */; };
@@ -32,6 +33,7 @@
 		346821E027B63B62002F5DF0 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		346821E427B64A31002F5DF0 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		346821E727B64A7A002F5DF0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		34899DA827B903FB00F918BE /*  KeyboardRelatedConstraintAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " KeyboardRelatedConstraintAnimator.swift"; sourceTree = "<group>"; };
 		3498E70527B583A9009284F5 /* NameIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameIdentifiable.swift; sourceTree = "<group>"; };
 		34FD909F27B551F0006B5DE7 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FD90A227B551F0006B5DE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		34899DA727B903F400F918BE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				34899DA827B903FB00F918BE /*  KeyboardRelatedConstraintAnimator.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		3498E70227B58306009284F5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +149,7 @@
 		34FD90A127B551F0006B5DE7 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				34899DA727B903F400F918BE /* Helpers */,
 				3498E70227B58306009284F5 /* Supporting Files */,
 				34463A0627B68734003E99FF /* Extensions */,
 				346821E627B64A6D002F5DF0 /* ViewModels */,
@@ -227,6 +238,7 @@
 				34463A0327B65171003E99FF /* ChildCell.swift in Sources */,
 				34FD90A327B551F0006B5DE7 /* AppDelegate.swift in Sources */,
 				3498E70627B583A9009284F5 /* NameIdentifiable.swift in Sources */,
+				34899DA927B903FB00F918BE /*  KeyboardRelatedConstraintAnimator.swift in Sources */,
 				34FEE9D827B56FC7001E79F3 /* PersonCell.swift in Sources */,
 				346821E127B63B62002F5DF0 /* RoundedButton.swift in Sources */,
 				34FD90A527B551F0006B5DE7 /* SceneDelegate.swift in Sources */,

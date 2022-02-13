@@ -20,3 +20,15 @@ class Person {
     
     
 }
+
+extension Person: CustomStringConvertible {
+    var description: String {
+        return """
+        <Person>: name: \(name ?? "nil"), age: \(age ?? "nil"),\
+         count of children: \(children.count),\
+         children: \(children.map {$0.description })
+        """
+    }
+    
+    
+}

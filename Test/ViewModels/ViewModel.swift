@@ -15,7 +15,7 @@ class ViewModel {
         case children
     }
     
-    var person = Person()
+    let person = Person()
     
     func numberOfSections() -> Int {
         return (person.children.count > 0) ?  2 : 1
