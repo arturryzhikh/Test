@@ -18,6 +18,13 @@ class Person {
         self.age = age
     }
     
+    func reset() {
+        self.children.removeAll(keepingCapacity: false)
+        self.age = nil
+        self.name = nil
+    }
+
+    
     
 }
 

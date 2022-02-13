@@ -80,9 +80,7 @@ class ViewModel {
     }
     
     func clear() {
-        person.children.removeAll(keepingCapacity: false)
-        person.age = nil
-        person.name = nil
+        person.reset()
         onReload?()
     }
     
