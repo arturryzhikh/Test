@@ -55,12 +55,13 @@ class ViewController: UIViewController {
         bindViewModel(viewModel)
         dismissKeyboard()
         keyboardAnimator =  KeyboardRelatedConstraintAnimator(constraint: tableViewBottomConstraint, in: view)
+        keyboardAnimator.addObservers()
        
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        keyboardAnimator.addObservers()
-        
+ 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        keyboardAnimator.removeObservers()
     }
     private func setupTableView() {
         tableView.register(UINib(nibName: PersonFooter.className, bundle: nil),
