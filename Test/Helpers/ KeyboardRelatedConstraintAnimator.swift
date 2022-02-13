@@ -12,7 +12,7 @@ import UIKit
 class KeyboardRelatedConstraintAnimator {
     unowned let constraint: NSLayoutConstraint
     unowned let view: UIView
-    
+    unowned let viewToHide: UIView
     private var defaultValue: CGFloat
     
     /// - note: Keyboard notifications observers are added on init and removed on deinit
@@ -20,10 +20,11 @@ class KeyboardRelatedConstraintAnimator {
     /// - Parameters:
     ///   - constraint: *(unowned)* constraint wich constant will be modified on keyboard animations, class respect's constraint's default constant, it is saved on initialization
     ///   - view: *(unowned)* view owning constraint, animations will be performed in that view
-    init(constraint: NSLayoutConstraint, in view: UIView) {
+    init(constraint: NSLayoutConstraint, in view: UIView, viewToHide: UIView) {
         self.constraint = constraint
         self.defaultValue = constraint.constant
         self.view = view
+        self.viewToHide = viewToHide
     }
     
     func addObservers() {
@@ -42,6 +43,7 @@ class KeyboardRelatedConstraintAnimator {
     }
     
     private func animate(notification: Notification, willHide: Bool) {
+       
         guard let userInfo = notification.userInfo,
               let animationDuration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double,
               let keyboardEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
@@ -49,10 +51,10 @@ class KeyboardRelatedConstraintAnimator {
         
         let rawAnimationCurve = rawAnimationCurveNumber.uint32Value << 16
         let animationCurve = UIView.AnimationOptions(rawValue: UInt(rawAnimationCurve))
-        
         self.constraint.constant = willHide ? self.defaultValue : keyboardEndFrame.height + self.defaultValue
-        
+        let alpha = willHide ? 1.0 : 0.0
         UIView.animate(withDuration: animationDuration, delay: 0, options: [UIView.AnimationOptions.beginFromCurrentState, animationCurve], animations: {
+            self.viewToHide.alpha = alpha
             self.view.layoutIfNeeded()
         }, completion: nil)
     }

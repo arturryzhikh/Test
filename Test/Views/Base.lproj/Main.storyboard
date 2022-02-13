@@ -308,6 +308,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Personal Data" id="ecw-JK-a3R"/>
                     <connections>
+                        <outlet property="clearButton" destination="zhi-cu-WfA" id="0Tl-Vi-HeP"/>
                         <outlet property="tableView" destination="R9X-y9-vmk" id="leE-S5-ZzZ"/>
                         <outlet property="tableViewBottomConstraint" destination="xJz-a2-GaL" id="43K-zT-MVJ"/>
                     </connections>

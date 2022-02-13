@@ -61,6 +61,7 @@ class ViewModel {
     }
     
     func addChild() {
+        
         guard canAddChild else {
             onReload?()
             return

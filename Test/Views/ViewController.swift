@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     private let viewModel = ViewModel()
     //MARK: Subviews
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var clearButton: UIButton!
     //MARK: Constraint outlet
     @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
     //MARK: IB Actions
@@ -54,7 +55,10 @@ class ViewController: UIViewController {
         setupTableView()
         bindViewModel(viewModel)
         dismissKeyboard()
-        keyboardAnimator =  KeyboardRelatedConstraintAnimator(constraint: tableViewBottomConstraint, in: view)
+        keyboardAnimator =
+        KeyboardRelatedConstraintAnimator(constraint: tableViewBottomConstraint,
+                                          in: view,
+                                          viewToHide: clearButton )
         keyboardAnimator.addObservers()
        
     }
