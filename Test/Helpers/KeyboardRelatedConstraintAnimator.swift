@@ -28,11 +28,15 @@ class KeyboardRelatedConstraintAnimator {
     }
     
     func addObservers() {
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: .main) { [weak self] (notification) in
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, 
+                                               object: nil, 
+                                               queue: .main) { [weak self] (notification) in
             self?.animate(notification: notification, willHide: false)
         }
         
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { [weak self] (notification) in
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, 
+                                               object: nil, 
+                                               queue: .main) { [weak self] (notification) in
             self?.animate(notification: notification, willHide: true)
         }
     }
@@ -53,7 +57,9 @@ class KeyboardRelatedConstraintAnimator {
         let animationCurve = UIView.AnimationOptions(rawValue: UInt(rawAnimationCurve))
         self.constraint.constant = willHide ? self.defaultValue : keyboardEndFrame.height + self.defaultValue
         let alpha = willHide ? 1.0 : 0.0
-        UIView.animate(withDuration: animationDuration, delay: 0, options: [UIView.AnimationOptions.beginFromCurrentState, animationCurve], animations: {
+        UIView.animate(withDuration: animationDuration, 
+                       delay: 0, 
+                       options: [UIView.AnimationOptions.beginFromCurrentState, animationCurve], animations: {
             self.viewToHide.alpha = alpha
             self.view.layoutIfNeeded()
         }, completion: nil)

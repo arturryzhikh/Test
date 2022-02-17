@@ -10,6 +10,7 @@ import Foundation
 class ViewModel {
     //MARK: Messages
     var onReload: (() -> Void)?
+    //
     enum Sections: Int {
         case person
         case children
@@ -61,12 +62,10 @@ class ViewModel {
     }
     
     func addChild() {
-        
-        guard canAddChild else {
+         guard canAddChild else {
             onReload?()
             return
         }
-        
         person.children.append(Person())
         onReload?()
     }
