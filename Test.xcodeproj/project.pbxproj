@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3404FCFB27BE8BEE00FF39AA /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404FCFA27BE8BEE00FF39AA /* Dynamic.swift */; };
 		34450EEA27B5B80F0019F60E /* PersonFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34450EE927B5B80F0019F60E /* PersonFooter.swift */; };
 		34450EEC27B5B8200019F60E /* PersonFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34450EEB27B5B8200019F60E /* PersonFooter.xib */; };
 		34463A0327B65171003E99FF /* ChildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34463A0227B65171003E99FF /* ChildCell.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3404FCFA27BE8BEE00FF39AA /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		34450EE927B5B80F0019F60E /* PersonFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonFooter.swift; sourceTree = "<group>"; };
 		34450EEB27B5B8200019F60E /* PersonFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonFooter.xib; sourceTree = "<group>"; };
 		34463A0227B65171003E99FF /* ChildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCell.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				34899DA827B903FB00F918BE /*  KeyboardRelatedConstraintAnimator.swift */,
+				3404FCFA27BE8BEE00FF39AA /* Dynamic.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3404FCFB27BE8BEE00FF39AA /* Dynamic.swift in Sources */,
 				34FD90A727B551F0006B5DE7 /* ViewController.swift in Sources */,
 				346821E827B64A7A002F5DF0 /* ViewModel.swift in Sources */,
 				34463A0327B65171003E99FF /* ChildCell.swift in Sources */,
