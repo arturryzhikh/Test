@@ -1,15 +1,15 @@
 //
-//   KeyboardRelatedConstraintAnimator.swift
+//  File.swift
 //  Test
 //
-//  Created by Artur Ryzhikh on 13.02.2022.
+//  Created by Artur Ryzhikh on 21.02.2022.
 //
 
 import UIKit
-
 /// Animate and modify constraint's constant when keyboard appears, changes frames or disappears.
 /// Use-case: move content above keyboard when it appears.
 class KeyboardRelatedConstraintAnimator {
+    
     unowned let constraint: NSLayoutConstraint
     unowned let view: UIView
     unowned let viewToHide: UIView
@@ -28,15 +28,11 @@ class KeyboardRelatedConstraintAnimator {
     }
     
     func addObservers() {
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, 
-                                               object: nil, 
-                                               queue: .main) { [weak self] (notification) in
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: .main) { [weak self] (notification) in
             self?.animate(notification: notification, willHide: false)
         }
         
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, 
-                                               object: nil, 
-                                               queue: .main) { [weak self] (notification) in
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { [weak self] (notification) in
             self?.animate(notification: notification, willHide: true)
         }
     }
@@ -57,9 +53,7 @@ class KeyboardRelatedConstraintAnimator {
         let animationCurve = UIView.AnimationOptions(rawValue: UInt(rawAnimationCurve))
         self.constraint.constant = willHide ? self.defaultValue : keyboardEndFrame.height + self.defaultValue
         let alpha = willHide ? 1.0 : 0.0
-        UIView.animate(withDuration: animationDuration, 
-                       delay: 0, 
-                       options: [UIView.AnimationOptions.beginFromCurrentState, animationCurve], animations: {
+        UIView.animate(withDuration: animationDuration, delay: 0, options: [UIView.AnimationOptions.beginFromCurrentState, animationCurve], animations: {
             self.viewToHide.alpha = alpha
             self.view.layoutIfNeeded()
         }, completion: nil)
