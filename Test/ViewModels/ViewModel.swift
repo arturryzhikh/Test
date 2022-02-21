@@ -9,7 +9,7 @@ import Foundation
 
 class ViewModel {
     //MARK: Messages
-    var onReload: (() -> Void)?
+    var onReload: EmptyCallback?
     //
     enum Sections: Int {
         case person
@@ -18,7 +18,7 @@ class ViewModel {
     
     let person = Person()
     
-    func numberOfSections() -> Int {
+    var numberOfSections: Int {
         return (person.children.count > 0) ?  2 : 1
     }
     

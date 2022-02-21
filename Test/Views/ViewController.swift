@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         viewModel.onReload = { [weak self] in
             guard let self = self else { return }
             self.tableView.reloadData()
-          
+            
         }
     }
     
@@ -55,18 +55,24 @@ class ViewController: UIViewController {
         setupTableView()
         bindViewModel(viewModel)
         dismissKeyboard()
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         keyboardAnimator =
         KeyboardRelatedConstraintAnimator(constraint: tableViewBottomConstraint,
                                           in: view,
                                           viewToHide: clearButton )
         keyboardAnimator.addObservers()
-       
     }
- 
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         keyboardAnimator.removeObservers()
     }
+    
     private func setupTableView() {
         tableView.register(UINib(nibName: PersonFooter.className, bundle: nil),
                            forHeaderFooterViewReuseIdentifier: PersonFooter.className)
@@ -78,7 +84,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        viewModel.numberOfSections()
+        viewModel.numberOfSections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

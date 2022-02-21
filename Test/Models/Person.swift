@@ -19,7 +19,7 @@ class Person {
     }
     
     func reset() {
-        self.children.removeAll(keepingCapacity: false)
+        self.children.removeAll()
         self.age = nil
         self.name = nil
     }
@@ -33,7 +33,7 @@ extension Person: CustomStringConvertible {
         return """
         <Person>: name: \(name ?? "nil"), age: \(age ?? "nil"),\
          count of children: \(children.count),\
-         children: \(children.map {$0.description })
+         children: \(children.map { $0.description })
         """
     }
     

@@ -9,7 +9,7 @@ import UIKit
 
 class PersonFooter: UITableViewHeaderFooterView, NameIdentifiable {
     
-    var addChildAction: (() -> Void)?
+    var addChildAction: EmptyCallback?
     
     @IBAction func addButtonTapped() {
         addChildAction?()

@@ -12,7 +12,7 @@ class ChildCell: UITableViewCell , NameIdentifiable {
     //MARK: Messages
     var nameChanged: ((String?) -> Void)?
     var ageChanged: ((String?) -> Void)?
-    var deleteChild: (() -> Void)?
+    var deleteChild: EmptyCallback?
     
     @IBAction func deleteButtonTapped() {
         deleteChild?()

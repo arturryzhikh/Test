@@ -43,7 +43,7 @@ class KeyboardRelatedConstraintAnimator {
     }
     
     private func animate(notification: Notification, willHide: Bool) {
-       
+        
         guard let userInfo = notification.userInfo,
               let animationDuration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double,
               let keyboardEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
